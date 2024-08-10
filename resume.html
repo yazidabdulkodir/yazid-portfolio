@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="web icon" type="png" href="img/icon_web.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <!-- Hamburger Icon -->
+        <ul id="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="resume">
+      <h2>Resume</h2>
+      <div class="resume-section">
+        <h3>Edukasi</h3>
+        <p><strong>Teknik Komputer dan Jaringan</strong>, SMK Pertiwi Ciasem | 2024</p>
+      </div>
+      <div class="resume-section">
+        <h3>Pengalaman</h3>
+        <p><strong>Praktik Kerja Lapangan di Kantor Pemerintah Desa Ciasem Tengah</strong> | Des 2022 - Mar 2023</p>
+        <ul>
+          <li><span class="poin"></span> Kolaborasi dengan perangkat desa untuk melayani masyarakat.</li>
+          <li><span class="poin"></span> Membuat, merekap, dan meregistrasi surat.</li>
+          <li><span class="poin"></span> Mengarsipkan dokumen.</li>
+          <li><span class="poin"></span> Menginput data dari buku DHKP ke dalam Excel.</li>
+          <li><span class="poin"></span> Menyiapkan dan merapikan meja kerja serta komputer.</li>
+          <li><span class="poin"></span> Menyiapkan dan merapikan kursi rapat.</li>
+          <li><span class="poin"></span> Menjaga kebersihan lingkungan kantor dan tempat ibadah.</li>
+        </ul>
+        <br />
+        <p><strong>Praktik Kerja Lapangan di Surya Toserba</strong> | Nov 2022 - Des 2022</p>
+        <ul>
+          <li><span class="poin"></span> Mendisplay barang.</li>
+          <li><span class="poin"></span> Membersihkan area display.</li>
+          <li><span class="poin"></span> Membantu memperbarui preset code harga barang.</li>
+          <li><span class="poin"></span> Membagikan brosur.</li>
+          <li><span class="poin"></span> Mengecek dan memastikan tanggal kedaluwarsa barang.</li>
+          <li><span class="poin"></span> Mem-FIFO barang.</li>
+          <li><span class="poin"></span> Passing up barang.</li>
+          <li><span class="poin"></span> Membanded barang.</li>
+          <li><span class="poin"></span> Membantu kegiatan merchandising barang.</li>
+        </ul>
+      </div>
+      <div class="resume-section">
+        <h3>Skills</h3>
+        <ul>
+          <li><span class="poin"></span> Mengoperasikan komputer.</li>
+          <li><span class="poin"></span> Microsoft Word.</li>
+          <li><span class="poin"></span> Microsoft Excel.</li>
+          <li><span class="poin"></span> spreadsheet.</li>
+          <li><span class="poin"></span> WPS Office.</li>
+          <li><span class="poin"></span> Bekerja dalam tim dan individu.</li>
+        </ul>
+      </div>
+      <div class="resume-section">
+        <h3>Sertifikat</h3>
+        <ul>
+          <li><span class="poin"></span> Sertifikat Kompetensi TKJ.</li>
+          <li><span class="poin"></span> Sertifikat Pelatihan Profesi Bekerja, Melanjutkan, Wirausaha.</li>
+          <li><span class="poin"></span> Sertifikat Kesamaptaan.</li>
+          <li><span class="poin"></span> Sertifikat Praktik Kerja Lapangan.</li>
+          <li><span class="poin"></span> Sertifikat Paskibra.</li>
+        </ul>
+      </div>
+    </section>
+    <script>
+      function toggleMenu() {
+        var navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("show");
+      }
+
+      // Menutup menu jika mengklik di luar area menu
+      document.addEventListener("click", function (event) {
+        var navLinks = document.getElementById("nav-links");
+        var menuIcon = document.querySelector(".menu-icon");
+
+        // Cek apakah klik terjadi di luar menu dan ikon hamburger
+        if (!navLinks.contains(event.target) && !menuIcon.contains(event.target)) {
+          navLinks.classList.remove("show");
+        }
+      });
+    </script>
+    <script>
+      // Fungsi untuk mengatur tautan aktif berdasarkan URL
+      function setActiveNavLink() {
+        const currentLocation = location.href;
+        const navLinks = document.querySelectorAll("header nav ul li a");
+
+        navLinks.forEach((link) => {
+          if (link.href === currentLocation) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      // Jalankan fungsi ketika halaman dimuat
+      window.addEventListener("load", setActiveNavLink);
+    </script>
+  </body>
+</html>

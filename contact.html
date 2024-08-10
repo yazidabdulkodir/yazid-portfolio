@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="web icon" type="png" href="img/icon_web.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <!-- Hamburger Icon -->
+        <ul id="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="contact">
+      <h2>Kontak</h2>
+      <p>Jika Anda ingin menghubungi saya, jangan ragu untuk menghubungi saya!</p>
+      <form id="contactForm">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" placeholder="Nama agar saya tahu siapa Anda." required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Email guna membalas pesan Anda." required />
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" placeholder="Tuliskan pesan Anda di sini." required></textarea>
+        <button type="submit">Kirim</button>
+
+        <div id="response-message"></div>
+      </form>
+    </section>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Yazid Abdul Kodir. All Rights Reserved.</p>
+        <p>Designed by Yazid Abdul Kodir</p>
+        <div class="social-media">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+        <!-- Modal Pop-up -->
+        <div id="responseModal" class="modal">
+          <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p id="responseMessage"></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function toggleMenu() {
+        var navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("show");
+      }
+
+      // Menutup menu jika mengklik di luar area menu
+      document.addEventListener("click", function (event) {
+        var navLinks = document.getElementById("nav-links");
+        var menuIcon = document.querySelector(".menu-icon");
+
+        // Cek apakah klik terjadi di luar menu dan ikon hamburger
+        if (!navLinks.contains(event.target) && !menuIcon.contains(event.target)) {
+          navLinks.classList.remove("show");
+        }
+      });
+    </script>
+    <script>
+      // Fungsi untuk mengatur tautan aktif berdasarkan URL
+      function setActiveNavLink() {
+        const currentLocation = location.href;
+        const navLinks = document.querySelectorAll("header nav ul li a");
+
+        navLinks.forEach((link) => {
+          if (link.href === currentLocation) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      // Jalankan fungsi ketika halaman dimuat
+      window.addEventListener("load", setActiveNavLink);
+    </script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script>
+      // Inisialisasi EmailJS
+      emailjs.init("Ii3GJKvJYxdMA1gCJ"); // Ganti dengan User ID Anda
+
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Mencegah pengiriman formulir default
+
+        // Validasi formulir
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        const responseMessage = document.getElementById("responseMessage");
+
+        if (name === "" || email === "" || message === "") {
+          responseMessage.innerText = "Semua kolom harus diisi.";
+          responseMessage.classList.add("error");
+          responseMessage.classList.remove("success");
+          showModal(); // Tampilkan modal pop-up
+          return;
+        }
+
+        // Kirim email
+        emailjs.sendForm("service_ph3xik5", "template_wt4koum", this).then(
+          function (response) {
+            responseMessage.innerText = "Pesan berhasil dikirim!";
+            responseMessage.classList.add("success");
+            responseMessage.classList.remove("error");
+            showModal(); // Tampilkan modal pop-up
+            document.getElementById("contactForm").reset();
+          },
+          function (error) {
+            responseMessage.innerText = "Terjadi kesalahan, silakan coba lagi.";
+            responseMessage.classList.add("error");
+            responseMessage.classList.remove("success");
+            showModal(); // Tampilkan modal pop-up
+          }
+        );
+      });
+
+      // Fungsi untuk menampilkan modal pop-up
+      function showModal() {
+        const modal = document.getElementById("responseModal");
+        modal.style.display = "block";
+
+        // Menutup modal saat tombol 'X' diklik
+        document.querySelector(".close-button").addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+
+        // Menutup modal saat pengguna mengklik di luar modal
+        window.addEventListener("click", function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

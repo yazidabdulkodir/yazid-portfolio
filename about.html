@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="web icon" type="png" href="img/icon_web.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <!-- Hamburger Icon -->
+        <ul id="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="about">
+      <h2>Tentang Saya</h2>
+      <p>
+        Halo, nama saya <span class="highlight">Yazid Abdul Kodir</span> dan saya sering dipanggil <span class="highlight">Yazid</span>. Saya lulusan <span class="highlight">SMK Pertiwi Ciasem</span> dengan jurusan
+        <span class="highlight">Teknik Komputer dan Jaringan</span>. Selama pendidikan, saya memiliki pengalaman <span class="highlight">Praktik Kerja Lapangan</span> langsung di
+        <span class="highlight">Kantor Pemerintah Desa Ciasem Tengah</span> sebagai staf pelayanan masyarakat, dengan tugas membuat berbagai surat resmi. Saya terampil dalam mengoperasikan komputer,
+        <span class="highlight">Microsoft Word</span>, dan <span class="highlight">Excel</span>, serta mampu bekerja dengan baik dalam tim maupun secara mandiri.
+      </p>
+      <br />
+      <p>
+        Secara profesional, saya sangat menghargai <span class="highlight">kedisiplinan</span> dan <span class="highlight">tanggung jawab</span>. Saya berusaha menyelesaikan tugas tepat waktu dan menjaga kualitas kerja tetap tinggi. Tujuan
+        saya dalam bekerja dan dalam proyek yang saya lakukan adalah untuk mendapatkan <span class="highlight">keterampilan dan kemampuan baru</span> serta memberikan <span class="highlight">nilai positif yang nyata</span> pada setiap
+        tugas.
+      </p>
+    </section>
+    <script>
+      function toggleMenu() {
+        var navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("show");
+      }
+
+      // Menutup menu jika mengklik di luar area menu
+      document.addEventListener("click", function (event) {
+        var navLinks = document.getElementById("nav-links");
+        var menuIcon = document.querySelector(".menu-icon");
+
+        // Cek apakah klik terjadi di luar menu dan ikon hamburger
+        if (!navLinks.contains(event.target) && !menuIcon.contains(event.target)) {
+          navLinks.classList.remove("show");
+        }
+      });
+    </script>
+    <script>
+      // Fungsi untuk mengatur tautan aktif berdasarkan URL
+      function setActiveNavLink() {
+        const currentLocation = location.href;
+        const navLinks = document.querySelectorAll("header nav ul li a");
+
+        navLinks.forEach((link) => {
+          if (link.href === currentLocation) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      // Jalankan fungsi ketika halaman dimuat
+      window.addEventListener("load", setActiveNavLink);
+    </script>
+  </body>
+</html>

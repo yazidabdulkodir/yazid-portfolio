@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="web icon" type="png" href="img/icon_web.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <!-- Hamburger Icon -->
+        <ul id="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home">
+      <div class="intro">
+        <h1>Selamat Datang di Portofolio Saya</h1>
+        <p>🎓Fresh Graduate dengan Semangat untuk Belajar dan Berkembang✨</p>
+        <a href="about.html" class="btn">Pelajari Lebih Lanjut Tentang Saya</a>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Yazid Abdul Kodir. All Rights Reserved.</p>
+        <p>Designed by Yazid Abdul Kodir</p>
+        <div class="social-media">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function toggleMenu() {
+        var navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("show");
+      }
+
+      // Menutup menu jika mengklik di luar area menu
+      document.addEventListener("click", function (event) {
+        var navLinks = document.getElementById("nav-links");
+        var menuIcon = document.querySelector(".menu-icon");
+
+        // Cek apakah klik terjadi di luar menu dan ikon hamburger
+        if (!navLinks.contains(event.target) && !menuIcon.contains(event.target)) {
+          navLinks.classList.remove("show");
+        }
+      });
+    </script>
+
+    <script>
+      // Fungsi untuk mengatur tautan aktif berdasarkan URL
+      function setActiveNavLink() {
+        const currentLocation = location.href;
+        const navLinks = document.querySelectorAll("header nav ul li a");
+
+        navLinks.forEach((link) => {
+          if (link.href === currentLocation) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      // Jalankan fungsi ketika halaman dimuat
+      window.addEventListener("load", setActiveNavLink);
+    </script>
+  </body>
+</html>

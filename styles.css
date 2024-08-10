@@ -1,0 +1,448 @@
+::selection {
+  background: #7cfc00; /* Hijau stabilo */
+  color: black; /* Mengubah warna teks menjadi hitam agar kontras dengan background hijau */
+}
+
+/* Font Family */
+* {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Body Style */
+body {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #444;
+  padding-top: 5.5rem; /* Sesuaikan padding-top dengan tinggi header */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Style */
+header {
+  background: #4caf50;
+  color: #fff;
+  padding: 0.5rem 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Membuat navbar tetap di atas saat di-scroll */
+  top: 0; /* Menetapkan posisi navbar di bagian paling atas */
+  width: 100%; /* Memastikan navbar mencakup seluruh lebar layar */
+  z-index: 1000; /* Memberikan prioritas layering agar berada di atas elemen lainnya */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #74c076;
+}
+
+header nav ul li a.active {
+  color: #ffeb3b; /* Warna kuning terang sebagai contoh */
+}
+
+/* Intro Section */
+.intro {
+  background: url("img/Born\ to\ hustle..png") no-repeat center center/cover; /* Mengganti dengan gambar background */
+  padding: 6rem 0; /* Menambah padding atas dan bawah agar lebih proporsional */
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px solid #444; /* Menambahkan border bawah */
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Menambahkan overlay gelap */
+  z-index: 1;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.intro p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  position: relative;
+  z-index: 2;
+}
+
+.btn {
+  background: #ffffff;
+  color: #4caf50;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.btn:hover {
+  background: #4caf50;
+  color: #ffffff;
+}
+
+.highlight {
+  background-color: #ffff00; /* Warna stabilo */
+  padding: 0 4px; /* Menambahkan sedikit ruang di sekitar teks */
+  border-radius: 3px; /* Opsional: memberikan sudut melengkung pada highlight */
+  color: black;
+}
+
+.poin {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #ffff00; /* Warna titik */
+  border-radius: 50%; /* Membuatnya menjadi lingkaran */
+  margin-right: 5px; /* Memberi jarak antara titik dan teks */
+  vertical-align: middle; /* Menyesuaikan posisi dengan teks */
+}
+
+/* Section Style */
+section {
+  padding: 3rem 0;
+  text-align: center;
+  background-color: #444444;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+/* About Section Style */
+section#about {
+  padding: 3rem 0;
+  text-align: center;
+  background-color: #444444;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+section#about p {
+  max-width: 900px; /* Membatasi lebar paragraf */
+  margin: 0 auto; /* Memposisikan paragraf di tengah */
+  color: #dedede;
+  line-height: 1.8;
+  font-size: 1rem;
+  padding: 0 20px; /* Memberikan padding untuk kenyamanan membaca */
+  text-align: justify;
+  text-indent: 30px;
+}
+
+.resume-section,
+.portfolio-item {
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #555555;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.resume-section h3,
+.portfolio-item h3 {
+  color: #74c076;
+  margin-bottom: 1rem;
+}
+
+/* Form Style */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #444444;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #74c076;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #666666;
+  border-radius: 5px;
+  background-color: #555555;
+  color: #ffffff;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+form button {
+  background: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+  display: block; /* Mengubah display menjadi block */
+  margin: 0 auto; /* Mengatur margin agar tombol berada di tengah */
+  width: 50%; /* Menentukan lebar tombol (misalnya 50% dari lebar form) */
+  max-width: 300px; /* Membatasi lebar maksimum tombol */
+}
+
+form button:hover {
+  background: #74c076;
+}
+
+/* Footer Style */
+footer {
+  background-color: #222;
+  color: #bababa;
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+  margin-top: auto;
+  border-top: 1px solid #4caf50;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.social-media {
+  margin-top: 1rem;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px;
+  color: #bababa;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #4caf50;
+}
+
+/* Modal */
+.modal {
+  display: none; /* Default hidden */
+  position: fixed;
+  z-index: 1001; /* Pastikan modal berada di atas elemen lainnya */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Background gelap */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto; /* Memposisikan modal di tengah layar */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Gaya untuk pesan sukses dan kesalahan */
+.modal-content p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modal-content p.success {
+  color: green;
+}
+
+.modal-content p.error {
+  color: red;
+}
+
+/* Navbar Responsif dengan Hamburger Menu */
+@media (max-width: 600px) {
+  header {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 34px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 320px;
+  }
+
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    width: auto;
+    background-color: #4caf50;
+    text-align: left;
+  }
+
+  header nav ul li {
+    width: 100%;
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  header nav ul li a {
+    padding: 10px;
+    display: block;
+    width: 100%;
+  }
+
+  /* Toggle Menu Functionality */
+  .show {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resume-section,
+  .portfolio-item {
+    padding: 1rem; /* Mengurangi padding agar lebih proporsional */
+    margin: 0 15px; /* Menambahkan margin di kiri dan kanan untuk memberi jarak dari tepi layar */
+    font-size: 1rem; /* Mengurangi ukuran font agar lebih sesuai dengan layar kecil */
+    margin-top: 1rem;
+  }
+
+  .resume-section h3 {
+    font-size: 1.2rem; /* Mengurangi ukuran heading */
+  }
+
+  form {
+    padding: 1rem; /* Menambah padding untuk memberi ruang di dalam form */
+    margin: 0 15px; /* Menambahkan margin di kiri dan kanan untuk memberi jarak dari tepi layar */
+  }
+
+  form input,
+  form textarea {
+    padding: 8px; /* Sedikit mengurangi padding untuk menyesuaikan dengan ukuran form yang lebih kecil */
+    font-size: 0.9rem; /* Mengurangi ukuran font agar lebih sesuai dengan layar kecil */
+  }
+
+  form button {
+    font-size: 0.9rem; /* Mengurangi ukuran font pada tombol */
+    width: 100%; /* Membuat tombol mengambil lebar penuh di layar kecil */
+  }
+}
+
+/* Menyembunyikan ikon hamburger pada layar yang lebih besar dari 600px */
+@media (min-width: 601px) {
+  .menu-icon {
+    display: none;
+  }
+}
+
+/* Responsif untuk layar di bawah 576px (Smartphone kecil) */
+@media (max-width: 576px) {
+  .intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro p {
+    font-size: 0.9rem;
+    padding: 0 15px;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  form label {
+    font-size: 0.9rem;
+  }
+
+  form input,
+  form textarea {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  form button {
+    font-size: 0.9rem;
+  }
+}
