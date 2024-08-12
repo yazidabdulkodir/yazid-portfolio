@@ -16,7 +16,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #444;
+  background-color: #333;
   padding-top: 5.5rem; /* Sesuaikan padding-top dengan tinggi header */
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ header nav ul li a.active {
   color: #fff;
   position: relative;
   overflow: hidden;
-  border-bottom: 5px solid #444; /* Menambahkan border bawah */
+  border-bottom: 5px solid #333; /* Menambahkan border bawah */
 }
 
 .intro::before {
@@ -138,7 +138,7 @@ header nav ul li a.active {
 section {
   padding: 3rem 0;
   text-align: center;
-  background-color: #444444;
+  background-color: #333;
   margin-bottom: 1rem;
   border-radius: 10px;
 }
@@ -154,7 +154,7 @@ section h2 {
 section#about {
   padding: 3rem 0;
   text-align: center;
-  background-color: #444444;
+  background-color: #333;
   margin-bottom: 1rem;
   border-radius: 10px;
 }
@@ -193,7 +193,7 @@ form {
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
-  background-color: #444444;
+  background-color: #333;
   padding: 0.5rem;
   border-radius: 10px;
 }
@@ -336,7 +336,7 @@ footer {
 /* Navbar Responsif dengan Hamburger Menu */
 @media (max-width: 600px) {
   header {
-    padding: 0.5rem;
+    padding: 1px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -347,7 +347,7 @@ footer {
     font-size: 34px;
     cursor: pointer;
     position: relative;
-    margin-left: 320px;
+    margin-left: 360px;
   }
 
   header nav ul {
@@ -402,6 +402,10 @@ footer {
   form button {
     font-size: 0.9rem; /* Mengurangi ukuran font pada tombol */
     width: 100%; /* Membuat tombol mengambil lebar penuh di layar kecil */
+  }
+
+  footer {
+    font-size: 1rem;
   }
 }
 
