@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Gambar ditampilkan dalam satu kolom */
+  gap: 20px; /* Jarak antara card */
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 600px; /* Lebar card */
+  max-width: 90%; /* Membatasi lebar maksimal card agar responsif */
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.card2-0 {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 600px; /* Lebar card */
+  max-width: 90%; /* Membatasi lebar maksimal card agar responsif */
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+img {
+  width: 100%; /* Gambar mengisi lebar card */
+  height: auto;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px; /* Jarak dari atas */
+  left: 20px; /* Jarak dari kiri */
+  background-color: #007bff; /* Warna latar belakang tombol */
+  color: #fff; /* Warna teks tombol */
+  padding: 10px 20px; /* Padding tombol */
+  border-radius: 5px; /* Sudut melengkung tombol */
+  text-decoration: none; /* Menghapus garis bawah */
+  font-size: 16px; /* Ukuran font tombol */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan tombol */
+  transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Warna latar belakang saat hover */
+}

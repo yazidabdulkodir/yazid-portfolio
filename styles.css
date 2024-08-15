@@ -170,8 +170,7 @@ section#about p {
   text-indent: 30px;
 }
 
-.resume-section,
-.portfolio-item {
+.resume-section {
   margin-bottom: 2rem;
   text-align: left;
   max-width: 800px;
@@ -182,10 +181,146 @@ section#about p {
   border-radius: 10px;
 }
 
-.resume-section h3,
-.portfolio-item h3 {
+.resume-section h3 {
   color: #74c076;
   margin-bottom: 1rem;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Membuat kolom dinamis dengan lebar minimum */
+  gap: 20px; /* Jarak antar card */
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px; /* Batasi lebar container */
+}
+
+.portfolio-card {
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 320px; /* Maksimal lebar card */
+  margin: 0 auto; /* Membuat card berada di tengah */
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 200px; /* Atur tinggi gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+  border-radius: 10px; /* Membuat sudut gambar melengkung */
+  border: 3px solid #333; /* Menambahkan border dengan warna abu-abu */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan */
+  margin-bottom: 15px; /* Memberikan jarak antara gambar dan teks di bawahnya */
+}
+
+.portfolio-card h3 {
+  margin: 0; /* Menghilangkan margin untuk menyesuaikan dengan padding */
+  padding: 10px 10px 5px; /* Padding untuk h3 dengan jarak bawah lebih kecil */
+  font-size: 1.1rem; /* Ukuran font yang lebih besar untuk judul */
+  color: #333; /* Warna teks sedikit lebih gelap */
+  text-align: left; /* Mengatur teks rata kiri */
+}
+
+.portfolio-card p {
+  font-size: 0.9rem; /* Ukuran font untuk paragraf */
+  margin: 0; /* Menghilangkan margin untuk menyesuaikan dengan padding */
+  padding: 5px 10px 10px; /* Padding untuk paragraf dengan jarak bawah lebih besar */
+  color: #555; /* Warna teks abu-abu tua */
+  text-align: left; /* Mengatur teks rata kiri */
+}
+
+/* Jika ingin mengatur padding secara keseluruhan untuk h3 dan p bersama-sama */
+.portfolio-card h3,
+.portfolio-card p {
+  margin: 0;
+  padding: 10px; /* Padding konsisten */
+  color: #222; /* Warna teks lebih gelap */
+  text-align: left; /* Teks rata kiri */
+}
+
+/* CSS untuk zoom gambar ke tengah layar */
+.zoomable {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8); /* Warna latar belakang semi-transparan */
+  overflow: hidden; /* Menghindari scroll */
+}
+
+.modal-content {
+  max-width: 90%; /* Maksimalkan lebar modal */
+  max-height: 90%; /* Maksimalkan tinggi modal */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: auto; /* Tambahkan scroll pada konten jika terlalu besar */
+}
+
+.modal-content img {
+  width: 100%; /* Gambar mengisi penuh modal */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 150px;
+  right: 300px; /* Pindahkan lebih dekat ke gambar */
+  color: #ffff00;
+  font-size: 40px; /* Ukuran font sedikit lebih kecil */
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff0000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-port {
+  color: #ffff00;
+  background-color: #000;
+  padding: 5px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1px;
+  border-radius: 5px;
+  transition: background 0.2s;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 5px;
+}
+
+.btn-port:hover {
+  color: #74c076;
+}
+
+.btn-port.disabled-link {
+  color: #000000; /* Ubah warna teks */
+  pointer-events: none; /* Nonaktifkan interaksi pointer */
+  cursor: not-allowed; /* Ubah kursor menjadi tanda dilarang */
+  text-decoration: none; /* Hapus underline jika ada */
 }
 
 /* Form Style */
@@ -347,7 +482,7 @@ footer {
     font-size: 34px;
     cursor: pointer;
     position: relative;
-    margin-left: 360px;
+    margin-left: 320px;
   }
 
   header nav ul {
@@ -376,8 +511,7 @@ footer {
     flex-direction: column;
   }
 
-  .resume-section,
-  .portfolio-item {
+  .resume-section {
     padding: 1rem; /* Mengurangi padding agar lebih proporsional */
     margin: 0 15px; /* Menambahkan margin di kiri dan kanan untuk memberi jarak dari tepi layar */
     font-size: 1rem; /* Mengurangi ukuran font agar lebih sesuai dengan layar kecil */
@@ -386,6 +520,29 @@ footer {
 
   .resume-section h3 {
     font-size: 1.2rem; /* Mengurangi ukuran heading */
+  }
+
+  .portfolio-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Kurangi lebar minimum kolom */
+    padding: 15px;
+    gap: 15px; /* Kurangi jarak antar card */
+  }
+
+  .portfolio-card {
+    padding: 15px; /* Kurangi padding dalam card */
+    max-width: 280px; /* Kurangi lebar maksimal card */
+  }
+
+  .portfolio-card h3 {
+    font-size: 1rem; /* Kurangi ukuran font untuk judul */
+  }
+
+  .portfolio-card p {
+    font-size: 0.85rem; /* Kurangi ukuran font untuk paragraf */
+  }
+
+  .portfolio-card img {
+    height: 180px; /* Kurangi tinggi gambar */
   }
 
   form {

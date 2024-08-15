@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -26,13 +26,94 @@
     </header>
     <section id="portfolio">
       <h2>Portfolio</h2>
-      <div class="portfolio-item">
-        <h3>All Projects</h3>
-        <p>Semua tugas saya telah diperbarui dan dapat dilihat di website berikut:</p>
-        <a href="https://yazidabdulkodir.github.io" class="btn" target="_blank">View Projects</a>
+      <div class="portfolio-container">
+        <!-- Hanya satu container -->
+        <div class="portfolio-card">
+          <img src="img/4.webp" alt="Image 1" class="zoomable" />
+          <h3>Praktik Membuat Parcel</h3>
+          <p>Merancang dan merangkai parcel kreatif dengan estetika yang menarik dan fungsional.</p>
+          <a href="#" class="btn-port disabled-link" tabindex="-1" aria-disabled="true">Read More</a>
+        </div>
+        <div class="portfolio-card">
+          <img src="img/5.webp" alt="Image 1" class="zoomable" />
+          <h3>Kegiatan Praktik Kerja Lapangan</h3>
+          <p>Melaksanakan tugas administratif dan pelayanan masyarakat di kantor pemerintah desa.</p>
+          <a href="pkl.html" class="btn-port" target="_blank">Sertifikat</a>
+        </div>
+        <div class="portfolio-card">
+          <img src="img/qwerty.webp" alt="Image 1" class="zoomable" />
+          <h3>Kegiatan Uji Kompetensi</h3>
+          <p>Menjalani uji kompetensi dalam teknik komputer dan jaringan untuk mengukur keterampilan praktis dan teori.</p>
+          <a href="ukk.html" class="btn-port" target="_blank">Sertifikat</a>
+        </div>
+        <div class="portfolio-card">
+          <img src="img/2.webp" alt="Image 1" class="zoomable" />
+          <h3>Praktik Mengafani Jenazah</h3>
+          <p>Mempraktikkan proses pengafanan jenazah dengan prosedur yang sesuai.</p>
+          <a href="#" class="btn-port disabled-link" tabindex="-1" aria-disabled="true">Read More</a>
+        </div>
+        <div class="portfolio-card">
+          <img src="img/3.webp" alt="Image 1" class="zoomable" />
+          <h3>Praktik Presentasi Bahasa Inggris</h3>
+          <p>Melakukan presentasi dalam bahasa Inggris dengan fokus pada komunikasi efektif dan penyampaian informasi yang jelas.</p>
+          <a href="#" class="btn-port disabled-link" tabindex="-1" aria-disabled="true">Read More</a>
+        </div>
+        <div class="portfolio-card">
+          <img src="img/aswd.webp" alt="Image 1" class="zoomable" />
+          <h3>Kesamaptaan</h3>
+          <p>Menjalani latihan kesamaptaan untuk meningkatkan kebugaran fisik dan kedisiplinan.</p>
+          <a href="#" class="btn-port disabled-link" tabindex="-1" aria-disabled="true">Read More</a>
+        </div>
       </div>
-      <!-- Repeat for more projects -->
     </section>
+
+    <script>
+      // Ambil semua gambar yang bisa di-zoom
+      const images = document.querySelectorAll(".zoomable");
+
+      // Buat modal dan konten gambar
+      const modal = document.createElement("div");
+      modal.classList.add("modal");
+      document.body.appendChild(modal);
+
+      const modalContent = document.createElement("div");
+      modalContent.classList.add("modal-content");
+      modal.appendChild(modalContent);
+
+      const closeModal = document.createElement("span");
+      closeModal.classList.add("close");
+      closeModal.innerHTML = "&times;";
+      modal.appendChild(closeModal);
+
+      images.forEach((image) => {
+        image.addEventListener("click", function () {
+          modalContent.innerHTML = `<img src="${this.src}" alt="${this.alt}">`;
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Hentikan scroll pada body saat modal terbuka
+        });
+      });
+
+      // Event listener untuk menutup modal saat klik tombol close
+      closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Aktifkan kembali scroll pada body saat modal ditutup
+      });
+
+      // Event listener untuk menutup modal saat klik di luar gambar
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+      });
+    </script>
+
     <script>
       function toggleMenu() {
         var navLinks = document.getElementById("nav-links");
