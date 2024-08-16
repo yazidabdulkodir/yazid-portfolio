@@ -8,60 +8,70 @@ body {
   background-color: #333;
   font-family: Arial, sans-serif;
   position: relative;
+  overflow-x: hidden;
 }
 
 .container {
   display: flex;
-  flex-direction: column; /* Gambar ditampilkan dalam satu kolom */
-  gap: 20px; /* Jarak antara card */
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 0 20px; /* Menambahkan padding untuk tampilan mobile */
 }
 
-.card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 600px; /* Lebar card */
-  max-width: 90%; /* Membatasi lebar maksimal card agar responsif */
-  text-align: center;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-}
-
+.card,
 .card2-0 {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 600px; /* Lebar card */
-  max-width: 90%; /* Membatasi lebar maksimal card agar responsif */
+  width: 600px;
+  max-width: 100%; /* Menjadikan card mengisi seluruh lebar layar di perangkat mobile */
   text-align: center;
-  margin-bottom: 4rem;
+  margin: 2rem 0;
 }
 
 img {
-  width: 100%; /* Gambar mengisi lebar card */
+  width: 100%;
   height: auto;
 }
 
 .back-button {
   position: absolute;
-  top: 20px; /* Jarak dari atas */
-  left: 20px; /* Jarak dari kiri */
-  background-color: #007bff; /* Warna latar belakang tombol */
-  color: #fff; /* Warna teks tombol */
-  padding: 10px 20px; /* Padding tombol */
-  border-radius: 5px; /* Sudut melengkung tombol */
-  text-decoration: none; /* Menghapus garis bawah */
-  font-size: 16px; /* Ukuran font tombol */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan tombol */
-  transition: background-color 0.3s ease; /* Efek transisi saat hover */
+  top: 20px;
+  left: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
 .back-button:hover {
-  background-color: #0056b3; /* Warna latar belakang saat hover */
+  background-color: #0056b3;
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .card,
+  .card2-0 {
+    margin: 1rem 0;
+    width: 100%; /* Lebar penuh untuk tampilan mobile */
+    max-width: 100%;
+  }
+
+  .back-button {
+    font-size: 14px; /* Mengurangi ukuran font tombol di perangkat mobile */
+    padding: 8px 16px;
+  }
 }
