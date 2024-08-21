@@ -34,7 +34,7 @@ img {
   padding: 10px 20px; /* Padding tombol */
   border-radius: 5px; /* Sudut melengkung tombol */
   text-decoration: none; /* Menghapus garis bawah */
-  font-size: 16px; /* Ukuran font tombol */
+  font-size: 1em; /* Ukuran font tombol */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan tombol */
   transition: background-color 0.3s ease; /* Efek transisi saat hover */
 }

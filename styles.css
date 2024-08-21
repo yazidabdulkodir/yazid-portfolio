@@ -92,7 +92,7 @@ header nav ul li a.active {
 
 .intro p {
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 300;
   position: relative;
   z-index: 2;
@@ -106,6 +106,7 @@ header nav ul li a.active {
   display: inline-block;
   margin-top: 15px;
   border-radius: 25px;
+  font-size: 1em;
   font-weight: bold;
   transition: background 0.3s, color 0.3s;
   position: relative;
@@ -122,16 +123,6 @@ header nav ul li a.active {
   padding: 0 4px; /* Menambahkan sedikit ruang di sekitar teks */
   border-radius: 3px; /* Opsional: memberikan sudut melengkung pada highlight */
   color: black;
-}
-
-.poin {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: #ffff00; /* Warna titik */
-  border-radius: 50%; /* Membuatnya menjadi lingkaran */
-  margin-right: 5px; /* Memberi jarak antara titik dan teks */
-  vertical-align: middle; /* Menyesuaikan posisi dengan teks */
 }
 
 /* Section Style */
@@ -164,7 +155,7 @@ section#about p {
   margin: 0 auto; /* Memposisikan paragraf di tengah */
   color: #dedede;
   line-height: 1.8;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 0 20px; /* Memberikan padding untuk kenyamanan membaca */
   text-align: justify;
   text-indent: 30px;
@@ -184,6 +175,35 @@ section#about p {
 .resume-section h3 {
   color: #74c076;
   margin-bottom: 1rem;
+  font-size: 1.2em;
+}
+
+.resume-section p {
+  font-size: 0.9em;
+}
+
+.resume-section ul {
+  padding-left: 1.5rem; /* Menambahkan padding untuk indentasi */
+}
+
+.resume-section ul li {
+  font-size: 0.8em;
+  list-style: none; /* Menghapus bullet default */
+  position: relative;
+  margin-bottom: 0.5rem;
+  line-height: 1.5; /* Mengatur jarak antar baris untuk konsistensi */
+  padding-left: 20px; /* Menambahkan ruang untuk ikon poin */
+}
+
+.resume-section ul li::before {
+  content: ""; /* Konten kosong untuk ikon */
+  width: 8px; /* Lebar ikon */
+  height: 8px; /* Tinggi ikon */
+  background-color: #ffff00; /* Warna ikon */
+  border-radius: 50%; /* Membuat ikon menjadi lingkaran */
+  position: absolute; /* Mengatur posisi absolut */
+  left: 0; /* Menyelaraskan di sebelah kiri teks */
+  top: 5px; /* Penyesuaian posisi vertikal */
 }
 
 .portfolio-container {
@@ -283,8 +303,8 @@ section#about p {
   position: absolute;
   top: 150px;
   right: 300px; /* Pindahkan lebih dekat ke gambar */
-  color: #ffff00;
-  font-size: 40px; /* Ukuran font sedikit lebih kecil */
+  color: #ff0000;
+  font-size: 3rem; /* Ukuran font sedikit lebih kecil */
   font-weight: bold;
   transition: 0.3s;
   cursor: pointer;
@@ -292,7 +312,7 @@ section#about p {
 
 .close:hover,
 .close:focus {
-  color: #ff0000;
+  color: #ff6e6e;
   text-decoration: none;
   cursor: pointer;
 }
@@ -307,6 +327,7 @@ section#about p {
   border-radius: 5px;
   transition: background 0.2s;
   font-weight: bold;
+  font-size: 1em;
   position: relative;
   z-index: 2;
   margin-bottom: 5px;
@@ -364,6 +385,7 @@ form button {
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
+  font-size: 1em;
   transition: background 0.3s;
   display: block; /* Mengubah display menjadi block */
   margin: 0 auto; /* Mengatur margin agar tombol berada di tengah */
@@ -394,7 +416,7 @@ footer {
 
 .footer-content p {
   margin: 0.5rem 0;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
 .social-media {
@@ -406,7 +428,7 @@ footer {
   margin: 0 10px;
   color: #bababa;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   transition: color 0.3s;
 }
 
@@ -490,6 +512,7 @@ footer {
     flex-direction: column;
     width: auto;
     background-color: #4caf50;
+
     text-align: left;
   }
 
@@ -562,7 +585,7 @@ footer {
   }
 
   footer {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 }
 
