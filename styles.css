@@ -217,40 +217,46 @@ section#about p {
 
 .portfolio-card {
   background: #ffffff;
-  padding: 20px;
+  padding: 0; /* Menghilangkan padding agar gambar menyatu */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 320px; /* Maksimal lebar card */
-  margin: 0 auto; /* Membuat card berada di tengah */
+  max-width: 320px;
+  margin: 0 auto;
+  overflow: hidden; /* Penting untuk menyembunyikan bagian gambar yang melebihi card saat di-zoom */
 }
 
 .portfolio-card img {
   width: 100%;
-  height: 200px; /* Atur tinggi gambar */
-  object-fit: cover; /* Menjaga proporsi gambar */
-  border-radius: 10px; /* Membuat sudut gambar melengkung */
-  border: 3px solid #333; /* Menambahkan border dengan warna abu-abu */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan */
-  margin-bottom: 15px; /* Memberikan jarak antara gambar dan teks di bawahnya */
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px; /* Agar gambar mengikuti sudut card */
+  border-top-right-radius: 8px; /* Agar gambar mengikuti sudut card */
+  margin: 0;
+  border: none;
+  transition: transform 0.3s ease-in-out; /* Efek transisi halus pada zoom */
+}
+
+.portfolio-card img:hover {
+  transform: scale(1.1); /* Zoom in saat di-hover */
 }
 
 .portfolio-card h3 {
-  margin: 0; /* Menghilangkan margin untuk menyesuaikan dengan padding */
-  padding: 10px 10px 5px; /* Padding untuk h3 dengan jarak bawah lebih kecil */
-  font-size: 1.1rem; /* Ukuran font yang lebih besar untuk judul */
-  color: #333; /* Warna teks sedikit lebih gelap */
-  text-align: left; /* Mengatur teks rata kiri */
+  margin: 0;
+  padding: 10px;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
 }
 
 .portfolio-card p {
-  font-size: 0.9rem; /* Ukuran font untuk paragraf */
-  margin: 0; /* Menghilangkan margin untuk menyesuaikan dengan padding */
-  padding: 5px 10px 10px; /* Padding untuk paragraf dengan jarak bawah lebih besar */
-  color: #555; /* Warna teks abu-abu tua */
-  text-align: left; /* Mengatur teks rata kiri */
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 10px;
+  color: #555;
+  text-align: left;
 }
 
 /* Jika ingin mengatur padding secara keseluruhan untuk h3 dan p bersama-sama */
@@ -324,13 +330,13 @@ section#about p {
   text-decoration: none;
   display: inline-block;
   margin-top: 1px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   transition: background 0.2s;
   font-weight: bold;
   font-size: 1em;
   position: relative;
   z-index: 2;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .btn-port:hover {
@@ -362,7 +368,7 @@ form label {
 
 form input,
 form textarea {
-  width: 100%;
+  width: 94%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #666666;
