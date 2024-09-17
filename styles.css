@@ -325,7 +325,7 @@ section#about p {
 
 .btn-port {
   color: #ffff00;
-  background-color: #000;
+  background-color: #4caf50;
   padding: 1px 20px;
   text-decoration: none;
   display: inline-block;
@@ -340,11 +340,11 @@ section#about p {
 }
 
 .btn-port:hover {
-  color: #74c076;
+  color: #ffffff;
 }
 
 .btn-port.disabled-link {
-  color: #000000; /* Ubah warna teks */
+  color: #4caf50; /* Ubah warna teks */
   pointer-events: none; /* Nonaktifkan interaksi pointer */
   cursor: not-allowed; /* Ubah kursor menjadi tanda dilarang */
   text-decoration: none; /* Hapus underline jika ada */
